@@ -61,6 +61,7 @@ public class Login extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==close){
             setVisible(false);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
         }else{
             setVisible(false);
             new Rules(inputName.getText());
