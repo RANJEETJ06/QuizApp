@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class login extends JFrame implements ActionListener {
+public class Login extends JFrame implements ActionListener {
     JButton play,close;
     JTextArea inputName;
     public static void main(String[] args) {
-        new login("");
+        new Login("");
     }
-    public login(String LoginName){
+    public Login(String LoginName){
         setTitle("Quiz Time");
         ImageIcon wl=new ImageIcon(ClassLoader.getSystemResource("icons/ic.png"));
         Image wl2=wl.getImage().getScaledInstance(500,500,Image.SCALE_DEFAULT);
