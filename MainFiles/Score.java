@@ -47,7 +47,7 @@ public class Score extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==again){
             setVisible(false);
-            new index("");
+            new Login("");
         }else{
             setVisible(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
