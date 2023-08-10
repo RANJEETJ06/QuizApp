@@ -51,6 +51,7 @@ public class Score extends JFrame implements ActionListener {
         }else{
             setVisible(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
+            dispose();
         }
     }
 }

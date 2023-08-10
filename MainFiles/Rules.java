@@ -65,5 +65,6 @@ public class Rules extends JFrame implements ActionListener {
             setVisible(false);
             new Quiz(backToLogin);
         }
+        dispose();
     }
 }

@@ -66,5 +66,6 @@ public class Login extends JFrame implements ActionListener {
             setVisible(false);
             new Rules(inputName.getText());
         }
+        dispose();
     }
 }

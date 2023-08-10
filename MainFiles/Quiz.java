@@ -297,6 +297,7 @@ public class Quiz extends JFrame implements ActionListener {
             }else{
                 new Score(S,score);
             }
+            dispose();
         }
     }
 }
