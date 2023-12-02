@@ -241,7 +241,7 @@ public class Quiz extends JFrame implements ActionListener {
         option2.setActionCommand(Questions[count][2]);
 
         option3.setText(Questions[count][3]);
-        option1.setActionCommand(Questions[count][3]);
+        option3.setActionCommand(Questions[count][3]);
 
         option4.setText(Questions[count][4]);
         option4.setActionCommand(Questions[count][4]);
