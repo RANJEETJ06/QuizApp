@@ -4,10 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 
 public class Login extends JFrame implements ActionListener {
     JButton play,close;
     JTextArea inputName;
+    Color words=new Color(226,223,210);
     public static void main(String[] args) {
         new Login("");
     }
@@ -16,7 +18,7 @@ public class Login extends JFrame implements ActionListener {
         ImageIcon wl=new ImageIcon(ClassLoader.getSystemResource("icons/ic.png"));
         Image wl2=wl.getImage().getScaledInstance(500,500,Image.SCALE_DEFAULT);
         setIconImage(wl2);
-        getContentPane().setBackground(Color.cyan);
+        getContentPane().setBackground(new Color(20,66,114));
         setLayout(null);
         ImageIcon i=new ImageIcon(ClassLoader.getSystemResource("icons/login.jpeg"));
         JLabel image=new JLabel(i);
@@ -26,32 +28,32 @@ public class Login extends JFrame implements ActionListener {
         setLocation(200,100);
         setVisible(true);
 
-        JLabel heading=new JLabel("Simple");
-        heading.setBounds(570,60,300,50);
-        heading.setFont(new Font("Viner Hand ITC",Font.BOLD,40));
-        heading.setForeground(Color.blue);
+        JLabel heading=new JLabel("Login");
+        heading.setBounds(590,90,300,50);
+        heading.setFont(new Font("Times New Roman",Font.BOLD,40));
+        heading.setForeground(words);
         add(heading);
 
         JLabel name=new JLabel("Enter Your Name");
-        name.setBounds(570,110,300,50);
+        name.setBounds(570,140,300,50);
         name.setFont(new Font("Times New Roman", Font.BOLD,20));
-        name.setForeground(Color.blue);
+        name.setForeground(words);
         add(name);
 
         inputName=new JTextArea();
         inputName.setText(LoginName);
-        inputName.setBounds(500,170,300,27);
+        inputName.setBounds(500,210,300,27);
         inputName.setFont(new Font("Times New Roman",Font.BOLD,20));
         add(inputName);
 
         play=new JButton("Play");
-        play.setBounds(680,250,80,27);
+        play.setBounds(680,290,80,27);
         play.setFont(new Font("Times New Roman", Font.PLAIN,15));
         play.addActionListener(this);
         add(play);
 
         close=new JButton("Exit");
-        close.setBounds(525,250,80,27);
+        close.setBounds(525,290,80,27);
         close.setFont(new Font("Times New Roman", Font.PLAIN,15));
         close.addActionListener(this);
         add(close);

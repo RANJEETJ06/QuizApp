@@ -6,16 +6,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class Score extends JFrame implements ActionListener {
     JButton close,again,view;
+    Color words=new Color(226,223,210);
+    Color bg=new Color(20,66,114);
     public Score(String name,int score){
         setTitle("Quiz Time");
         ImageIcon wl=new ImageIcon(ClassLoader.getSystemResource("icons/ic.png"));
         Image wl2=wl.getImage().getScaledInstance(500,500,Image.SCALE_DEFAULT);
         setIconImage(wl2);
-        getContentPane().setBackground(Color.cyan);
+        getContentPane().setBackground(bg);
         setLayout(null);
         setBounds(240,120,800,500);
         setVisible(true);
@@ -29,12 +30,12 @@ public class Score extends JFrame implements ActionListener {
         JLabel heading=new JLabel("Thank You "+name+" For Participating In Game");
         heading.setBounds(45,30,700,40);
         heading.setFont(new Font("Tahoma",Font.PLAIN,25));
-        heading.setForeground(Color.blue);
+        heading.setForeground(words);
         add(heading);
         JLabel display=new JLabel("Your Score is "+score);
         display.setBounds(450,300,200,30);
         display.setFont(new Font("Tahoma",Font.PLAIN,20));
-        display.setForeground(Color.blue);
+        display.setForeground(words);
         add(display);
         again=new JButton("Play Again");
         again.setBounds(330,380,120,30);
