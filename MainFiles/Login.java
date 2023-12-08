@@ -1,19 +1,27 @@
 package MainFiles;
 
+import Data.DataTransferOutput;
+import Data.Node;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class Login extends JFrame implements ActionListener {
     JButton play,close;
     JTextArea inputName;
+    JLabel error;
     Color words=new Color(226,223,210);
     public static void main(String[] args) {
-        new Login("");
+        new Login("",false);
     }
-    public Login(String LoginName){
+    public Login(String LoginName,boolean UserCheck){
         setTitle("Quiz Time");
         ImageIcon wl=new ImageIcon(ClassLoader.getSystemResource("icons/ic.png"));
         Image wl2=wl.getImage().getScaledInstance(500,500,Image.SCALE_DEFAULT);
@@ -57,6 +65,13 @@ public class Login extends JFrame implements ActionListener {
         close.setFont(new Font("Times New Roman", Font.PLAIN,15));
         close.addActionListener(this);
         add(close);
+
+        error=new JLabel("*Already Exist Username");
+        error.setBounds(500,185,300,27);
+        error.setFont(new Font("Times New Roman", Font.BOLD,15));
+        error.setForeground(Color.red);
+        error.setVisible(UserCheck);
+        add(error);
     }
 
     @Override
@@ -65,8 +80,21 @@ public class Login extends JFrame implements ActionListener {
             setVisible(false);
             setDefaultCloseOperation(EXIT_ON_CLOSE);
         }else{
-            setVisible(false);
-            new Rules(inputName.getText());
+            try{
+                ResultSet vr=new DataTransferOutput().r;
+                ArrayList<String> m=new ArrayList<>();
+                while (vr.next()) {
+                    m.add(vr.getString(2));
+                }
+                if(m.contains(inputName.getText())){
+                    new Login(inputName.getText(),true);
+                }else {
+                    setVisible(false);
+                    new Rules(inputName.getText());
+                }
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
         }
         dispose();
     }

@@ -86,7 +86,7 @@ public class View extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==again){
-            new Login("");
+            new Login("",false);
         } else {
             setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
